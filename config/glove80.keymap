@@ -19,39 +19,30 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
-// これは、最大速度に達するまでの速度を定義できます。つまり、500ms後には、定義されたフルスピードになります。言い換えれば、フルスピードに達する前に、マウスを動かすためにキーを押し続ける必要がある時間です。
-#define MOUSE_TIME_TO_MAX_SPEED 500 
 
 // これは、マウスの速度を設定するために必要なものです
+
 #define U_MOUSE_MOVE_MAX 3000
+
 #undef MOVE_UP
 #undef MOVE_DOWN
 #undef MOVE_LEFT
 #undef MOVE_RIGHT
+
 #define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
 #define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
 #define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
 #define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
 
-// これは、スクロール速度を設定するために必要なものです
-#define U_MOUSE_SCROLL_MAX 20 
-
 #undef SCROLL_UP
 #undef SCROLL_DOWN
 #undef SCROLL_LEFT
 #undef SCROLL_RIGHT
+
 #define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
 #define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
 #define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
 #define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
-
-&mmv {
-    time-to-max-speed-ms = <MOUSE_TIME_TO_MAX_SPEED>;
-};
-
-&msc {
-    time-to-max-speed-ms = <MOUSE_TIME_TO_MAX_SPEED>;
-};
 
 / {
     behaviors {
@@ -73,7 +64,9 @@
             quick-tap-ms = <200>;
             require-prior-idle-ms = <100>;
             hold-trigger-on-release;
+
             // hold-trigger-key-positions = <1 2 3 6 7 8 31 0 9>;
+
             bindings = <&kp>, <&kp>;
         };
     };
@@ -116,6 +109,11 @@
             bindings = <&kp UNDERSCORE>;
             key-positions = <21 20>;
         };
+
+        combo_lt3 {
+            bindings = <&mo 3>;
+            key-positions = <70 73>;
+        };
     };
 
     keymap {
@@ -131,11 +129,11 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1         &kp F2    &kp F3   &kp F4    &kp F5                                                                                                       &kp F6  &kp F7     &kp F8    &kp F9    &kp F10
-&kp EQUAL      &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                                    &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB        &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                     &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&mt LCTRL ESC  &kp A     &kp S    &kp D     &kp F      &kp G                                                                                     &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp GRAVE      &kp Z     &kp X    &kp C     &kp V      &kp B   &mt LGUI LANG2   &kp LCTRL    &layer_td    &kp LGUI  &kp RCTRL  &mt RGUI LANG1    &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
+&kp F1         &kp F2    &kp F3   &kp F4    &kp F5                                                                                                              &kp F6  &kp F7     &kp F8    &kp F9    &kp F10
+&kp EQUAL      &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                                           &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB        &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                            &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&mt LCTRL ESC  &kp A     &kp S    &kp D     &kp F      &kp G                                                                                            &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
+&kp GRAVE      &kp Z     &kp X    &kp C     &kp V      &kp B   &mt LGUI LANG2          &kp LCTRL    &layer_td    &kp LGUI  &kp RCTRL  &mt RGUI LANG1    &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
 &mo MAGIC      &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &mt_repeat LSHIFT BSPC  &lt 2 SPACE  &kp LALT     &kp RALT  &lt 1 RET  &mt RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
             >;
         };
