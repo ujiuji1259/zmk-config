@@ -80,7 +80,7 @@
             &kp TAB        &kp Q    &kp W       &kp E       &kp R       &kp T                                                                      &kp Y   &kp U   &kp I       &kp O       &kp P       &kp BSLH
             &mt LCTRL ESC        &kp A    &kp S       &kp D       &kp F       &kp G                                                                      &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
             &kp GRAVE      &kp Z    &kp X       &kp C       &kp V       &kp B   &mt LGUI LANG2   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL &mt RGUI LANG1   &kp N   &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp PG_UP
-            &mo MAGIC      &kp HOME &kp END     &kp LEFT    &kp RIGHT           &lt 2 BSPC    &mt LSHIFT SPACE     &kp LALT   &kp RALT  &mt RSHIFT SPACE   &lt 1 RET           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
+            &mo MAGIC      &kp HOME &kp END     &kp LEFT    &kp RIGHT           &mt LSHIFT SPACE    &kp BSPC     &kp LALT   &kp RALT  &lt 1 RET   &mt RSHIT SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
             >;
         };
 
