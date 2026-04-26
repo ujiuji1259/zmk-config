@@ -19,6 +19,40 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
+// これは、最大速度に達するまでの速度を定義できます。つまり、500ms後には、定義されたフルスピードになります。言い換えれば、フルスピードに達する前に、マウスを動かすためにキーを押し続ける必要がある時間です。
+#define MOUSE_TIME_TO_MAX_SPEED 500 
+
+// これは、マウスの速度を設定するために必要なものです
+#define U_MOUSE_MOVE_MAX 3000
+#undef MOVE_UP
+#undef MOVE_DOWN
+#undef MOVE_LEFT
+#undef MOVE_RIGHT
+#define MOVE_UP MOVE_VERT(-U_MOUSE_MOVE_MAX)
+#define MOVE_DOWN MOVE_VERT(U_MOUSE_MOVE_MAX)
+#define MOVE_LEFT MOVE_HOR(-U_MOUSE_MOVE_MAX)
+#define MOVE_RIGHT MOVE_HOR(U_MOUSE_MOVE_MAX)
+
+// これは、スクロール速度を設定するために必要なものです
+#define U_MOUSE_SCROLL_MAX 20 
+
+#undef SCROLL_UP
+#undef SCROLL_DOWN
+#undef SCROLL_LEFT
+#undef SCROLL_RIGHT
+#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
+#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+
+&mmv {
+    time-to-max-speed-ms = <MOUSE_TIME_TO_MAX_SPEED>;
+};
+
+&msc {
+    time-to-max-speed-ms = <MOUSE_TIME_TO_MAX_SPEED>;
+};
+
 / {
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
