@@ -30,6 +30,18 @@
             tapping-term-ms = <200>;
             bindings = <&mo LOWER>, <&to LOWER>;
         };
+
+        mt_repeat: mt_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <100>;
+            hold-trigger-on-release;
+            // hold-trigger-key-positions = <1 2 3 6 7 8 31 0 9>;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     macros {
@@ -90,7 +102,7 @@
 &kp TAB        &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                     &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
 &mt LCTRL ESC  &kp A     &kp S    &kp D     &kp F      &kp G                                                                                     &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
 &kp GRAVE      &kp Z     &kp X    &kp C     &kp V      &kp B   &mt LGUI LANG2   &kp LCTRL    &layer_td    &kp LGUI  &kp RCTRL  &mt RGUI LANG1    &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
-&mo MAGIC      &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &mt LSHIFT BSPC  &lt 2 SPACE  &kp LALT     &kp RALT  &lt 1 RET  &mt RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
+&mo MAGIC      &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &mt_repeat LSHIFT BSPC  &lt 2 SPACE  &kp LALT     &kp RALT  &lt 1 RET  &mt RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
             >;
         };
 
