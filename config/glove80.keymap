@@ -18,10 +18,8 @@
 #define MAGIC 2
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
-
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 3000  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
-
 
 / {
     behaviors {
@@ -40,13 +38,31 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <500>;
             require-prior-idle-ms = <100>;
             hold-trigger-on-release;
 
             // hold-trigger-key-positions = <1 2 3 6 7 8 31 0 9>;
 
             bindings = <&kp>, <&kp>;
+        };
+
+        accmove: accmove {
+            compatible = compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            time-to-max-speed-ms = <500>;
+            acceleration-exponent = <2>;
+        };
+
+        accscrole: accscrole {
+            compatible = compatible = "zmk,behavior-input-two-axis";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_HWHEEL>;
+            y-input-code = <INPUT_REL_WHEEL>;
+            time-to-max-speed-ms = <300>;
+            acceleration-exponent = <1>;
         };
     };
 
@@ -123,7 +139,7 @@
 &trans        &none         &none       &none       &none      &kp HOME                                                          &kp LPAR        &kp KP_NUM      &kp KP_EQUAL  &kp KP_DIVIDE    &kp KP_MULTIPLY  &kp PSCRN
 &trans        &none         &none       &kp UP      &none      &kp END                                                           &kp RPAR        &kp KP_N7       &kp KP_N8     &kp KP_N9        &kp KP_MINUS     &kp SLCK
 &trans        &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                         &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp KP_PLUS      &none
-&trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp KP_ENTER     &trans
+&trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &accmove MOVE_LEFT  &accmove MOVE_DOWN  &accmove MOVE_UP  &accmove MOVE_RIGHT  &kp KP_ENTER     &trans
 &trans        &kp CAPS      &kp INS     &kp F11     &kp F12               &trans  &trans  &trans         &trans  &trans  &trans                  &mkp LCLK       &mkp RCLK     &none            &kp KP_ENTER     &trans
             >;
         };
@@ -134,7 +150,7 @@
 &trans        &none         &none       &none       &none      &kp HOME                                                          &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
 &trans        &kp EXCL      &kp AT      &kp HASH    &kp DLLR   &kp PRCNT                                                         &kp CARET  &kp AMPS    &kp ASTERISK  &kp LPAR       &kp RPAR         &kp SLCK
 &trans        &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                         &kp PRCNT  &kp PIPE    &kp MINUS     &kp LBRC       &kp RBRC         &kp GRAVE
-&trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &kp MINUS  &kp PLUS    &kp KP_EQUAL  &kp LBKT       &kp RBKT         &trans
+&trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &kp MINUS  &kp TILDE   &kp KP_EQUAL  &kp LBKT       &kp RBKT         &trans
 &trans        &kp CAPS      &kp INS     &kp F11     &kp F12               &trans  &trans  &trans         &trans  &trans  &trans             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &trans
             >;
         };
@@ -143,7 +159,7 @@
             bindings = <
 &bt BT_CLR   &none            &none            &none            &none                                                                                                &none           &none         &none             &none  &none
 &none        &none            &none            &none            &none            &none                                                               &none           &none           &none         &none             &none  &none
-&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT   &none  &none
+&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                     &accscrole SCRL_LEFT  &accscrole SCRL_DOWN  &accscrole SCRL_UP  &accscrole SCRL_RIGHT   &none  &none
 &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT   &none  &bootloader
 &sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none           &none  &none  &none  &kp C_AC_BACK   &mkp LCLK       &mkp RCLK     &kp C_AC_FORWARD  &none  &sys_reset
 &none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB    &none  &none  &none                  &none           &none         &none             &none  &none
