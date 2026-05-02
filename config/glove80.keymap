@@ -55,7 +55,6 @@
             time-to-max-speed-ms = <600>;
             acceleration-exponent = <1>;
         };
-
     };
 
     macros {
@@ -116,34 +115,34 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1         &kp F2    &kp F3   &kp F4    &kp F5                                                                                                              &kp F6  &kp F7     &kp F8    &kp F9    &kp F10
-&kp EQUAL      &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                                           &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB        &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                            &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&mt LCTRL ESC  &kp A     &kp S    &kp D     &kp F      &kp G                                                                                            &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp GRAVE      &kp Z     &kp X    &kp C     &kp V      &kp B   &mt LGUI LANG2          &kp LCTRL    &layer_td    &kp LGUI  &kp RCTRL  &mt RGUI LANG1    &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
-&mo MAGIC      &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &mt_repeat LSHIFT BSPC  &lt 2 SPACE  &kp LALT     &kp RALT  &lt 1 RET  &mt RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
+&kp F1         &kp F2    &kp F3   &kp F4    &kp F5                                                                                                                                   &kp F6  &kp F7     &kp F8    &kp F9    &kp F10
+&kp EQUAL      &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                                                                &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB        &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                                                 &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&mt LCTRL ESC  &kp A     &kp S    &kp D     &kp F      &kp G                                                                                                                 &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
+&kp GRAVE      &kp Z     &kp X    &kp C     &kp V      &kp B   &mt LGUI LANG2          &kp LG(LA(LCTRL))  &kp LG(LS(LC(NUMBER_4)))    &kp LGUI  &kp RCTRL  &mt RGUI LANG1    &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
+&mo MAGIC      &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &mt_repeat LSHIFT BSPC  &lt 2 SPACE        &kp LALT                    &kp RALT  &lt 1 RET  &mt RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
             >;
         };
 
         lower_layer {
             bindings = <
-&kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT  &kp C_PP                                                                                     &kp C_MUTE      &kp C_VOL_DN  &kp C_VOL_UP     &none            &kp PAUSE_BREAK
-&trans        &none         &none       &none       &none      &kp HOME                                                          &kp LPAR        &kp KP_NUM      &kp KP_EQUAL  &kp KP_DIVIDE    &kp KP_MULTIPLY  &kp PSCRN
-&trans        &none         &none       &kp UP      &none      &kp END                                                           &kp RPAR        &kp KP_N7       &kp KP_N8     &kp KP_N9        &kp KP_MINUS     &kp SLCK
-&trans        &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                         &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp KP_PLUS      &none
+&kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT  &kp C_PP                                                                                         &kp C_MUTE          &kp C_VOL_DN      &kp C_VOL_UP         &none            &kp PAUSE_BREAK
+&trans        &none         &none       &none       &none      &kp HOME                                                          &kp LPAR            &kp KP_NUM          &kp KP_EQUAL      &kp KP_DIVIDE        &kp KP_MULTIPLY  &kp PSCRN
+&trans        &none         &none       &kp UP      &none      &kp END                                                           &kp RPAR            &kp KP_N7           &kp KP_N8         &kp KP_N9            &kp KP_MINUS     &kp SLCK
+&trans        &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                         &kp LEFT            &kp DOWN            &kp UP            &kp RIGHT            &kp KP_PLUS      &none
 &trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &accmove MOVE_LEFT  &accmove MOVE_DOWN  &accmove MOVE_UP  &accmove MOVE_RIGHT  &kp KP_ENTER     &trans
-&trans        &kp CAPS      &kp INS     &kp F11     &kp F12               &trans  &trans  &trans         &trans  &trans  &trans                  &mkp LCLK       &mkp RCLK     &none            &kp KP_ENTER     &trans
+&trans        &kp CAPS      &kp INS     &kp F11     &kp F12               &trans  &trans  &trans         &trans  &trans  &trans                      &mkp LCLK           &mkp RCLK         &none                &kp KP_ENTER     &trans
             >;
         };
 
         raise_layer {
             bindings = <
-&kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT  &kp C_PP                                                                                &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none            &kp PAUSE_BREAK
-&trans        &none         &none       &none       &none      &kp HOME                                                          &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
-&trans        &kp EXCL      &kp AT      &kp HASH    &kp DLLR   &kp PRCNT                                                         &kp CARET  &kp AMPS    &kp ASTERISK  &kp LPAR       &kp RPAR         &kp SLCK
-&trans        &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                         &kp PRCNT  &kp PIPE    &kp MINUS     &kp LBRC       &kp RBRC         &kp GRAVE
-&trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &kp MINUS  &kp TILDE   &kp KP_EQUAL  &kp LBKT       &kp RBKT         &trans
-&trans        &kp CAPS      &kp INS     &kp F11     &kp F12               &trans  &trans  &trans         &trans  &trans  &trans             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &trans
+&kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT  &kp C_PP                                                                                 &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none            &kp PAUSE_BREAK
+&trans        &none         &none       &none       &none       &kp HOME                                                          &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
+&trans        &kp EXCL      &kp AT      &kp HASH    &kp DLLR    &kp PRCNT                                                         &kp CARET  &kp AMPS    &kp ASTERISK  &kp LPAR       &kp RPAR         &kp SLCK
+&trans        &kp CARET     &kp MINUS   &kp UNDER   &kp DOLLAR  &kp PG_UP                                                         &kp PRCNT  &kp PIPE    &kp MINUS     &kp LBRC       &kp RBRC         &kp GRAVE
+&trans        &kp K_CMENU   &kp SEMI    &kp COMMA   &kp F12     &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &kp MINUS  &kp TILDE   &kp KP_EQUAL  &kp LBKT       &kp RBKT         &trans
+&trans        &kp CAPS      &kp INS     &kp F11     &kp F12                &trans  &trans  &trans         &trans  &trans  &trans             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &trans
             >;
         };
 
