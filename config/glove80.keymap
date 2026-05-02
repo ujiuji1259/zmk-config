@@ -139,9 +139,9 @@
             bindings = <
 &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT  &kp C_PP                                                                                 &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none            &kp PAUSE_BREAK
 &trans        &none         &none       &none       &none       &kp HOME                                                          &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
-&trans        &kp EXCL      &kp AT      &kp HASH    &kp DLLR    &kp PRCNT                                                         &kp CARET  &kp AMPS    &kp ASTERISK  &kp LPAR       &kp RPAR         &kp SLCK
-&trans        &kp CARET     &kp MINUS   &kp UNDER   &kp DOLLAR  &kp PG_UP                                                         &kp PRCNT  &kp PIPE    &kp MINUS     &kp LBRC       &kp RBRC         &kp GRAVE
-&trans        &kp K_CMENU   &kp SEMI    &kp COMMA   &kp F12     &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &kp MINUS  &kp TILDE   &kp KP_EQUAL  &kp LBKT       &kp RBKT         &trans
+&trans        &kp EXCL      &kp AT      &kp HASH    &kp DLLR    &kp PRCNT                                                         &kp CARET  &kp AMPS    &kp ASTERISK  &kp LPAR       &kp RPAR         &kp COLON
+&trans        &kp CARET     &kp MINUS   &kp UNDER   &kp DOLLAR  &kp PG_UP                                                         &kp PRCNT  &kp PIPE    &kp MINUS     &kp LBRC       &kp RBRC         &kp SINGLE_QUOTE
+&trans        &kp K_CMENU   &kp SEMI    &kp COMMA   &kp F12     &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &kp MINUS  &kp TILDE   &kp KP_EQUAL  &kp LBKT       &kp RBKT         &kp GRAVE
 &trans        &kp CAPS      &kp INS     &kp F11     &kp F12                &trans  &trans  &trans         &trans  &trans  &trans             &kp KP_N0   &kp PLUS      &kp KP_DOT     &kp KP_ENTER     &trans
             >;
         };
