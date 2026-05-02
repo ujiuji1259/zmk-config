@@ -142,7 +142,7 @@
 &trans        &kp EXCL      &kp AT      &kp HASH    &kp DLLR    &kp PRCNT                                                         &kp CARET  &kp AMPS    &kp ASTERISK  &kp LPAR       &kp RPAR         &kp SLCK
 &trans        &kp CARET     &kp MINUS   &kp UNDER   &kp DOLLAR  &kp PG_UP                                                         &kp PRCNT  &kp PIPE    &kp MINUS     &kp LBRC       &kp RBRC         &kp GRAVE
 &trans        &kp K_CMENU   &kp SEMI    &kp COMMA   &kp F12     &kp PG_DN  &trans  &trans  &to DEFAULT    &trans  &trans  &trans  &kp MINUS  &kp TILDE   &kp KP_EQUAL  &kp LBKT       &kp RBKT         &trans
-&trans        &kp CAPS      &kp INS     &kp F11     &kp F12                &trans  &trans  &trans         &trans  &trans  &trans             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &trans
+&trans        &kp CAPS      &kp INS     &kp F11     &kp F12                &trans  &trans  &trans         &trans  &trans  &trans             &kp KP_N0   &kp PLUS      &kp KP_DOT     &kp KP_ENTER     &trans
             >;
         };
 
