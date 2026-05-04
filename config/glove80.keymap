@@ -100,6 +100,26 @@
             bindings = <&mo 3>;
             key-positions = <70 73>;
         };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <42 43>;
+        };
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <60 61>;
+        };
+
+        lang2 {
+            bindings = <&kp LANG2>;
+            key-positions = <41 42>;
+        };
+
+        lang1 {
+            bindings = <&kp LANG1>;
+            key-positions = <38 37>;
+        };
     };
 
     keymap {
@@ -115,12 +135,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1         &kp F2    &kp F3   &kp F4    &kp F5                                                                                                                                   &kp F6  &kp F7     &kp F8    &kp F9    &kp F10
-&kp EQUAL      &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                                                                &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB        &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                                                 &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
-&mt LCTRL ESC  &kp A     &kp S    &kp D     &kp F      &kp G                                                                                                                 &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
-&kp GRAVE      &kp Z     &kp X    &kp C     &kp V      &kp B   &mt LGUI LANG2          &kp LG(LA(LCTRL))  &kp LG(LS(LC(NUMBER_4)))    &kp LGUI  &kp RCTRL  &mt RGUI LANG1    &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
-&mo MAGIC      &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &mt_repeat LSHIFT BSPC  &lt 2 SPACE        &kp LALT                    &kp RALT  &lt 1 RET  &mt RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
+&kp F1         &kp F2    &kp F3   &kp F4    &kp F5                                                                                                                                    &kp F6  &kp F7     &kp F8    &kp F9    &kp F10
+&kp EQUAL      &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                                                                 &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB        &kp Q     &kp W    &kp E     &kp R      &kp T                                                                                                                  &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
+&mt LCTRL ESC  &kp A     &kp S    &kp D     &kp F      &kp G                                                                                                                  &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
+&kp GRAVE      &kp Z     &kp X    &kp C     &kp V      &kp B   &mt LGUI LANG2           &kp LG(LA(LCTRL))  &kp LG(LS(LC(NUMBER_4)))    &kp LGUI  &kp RCTRL  &mt RGUI LANG1    &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
+&mo MAGIC      &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &mt_repeat LSHIFT LANG1  &lt 2 LANG2        &kp LALT                    &kp RALT  &lt 1 RET  &mt RSHIFT SPACE          &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &kp PG_DN
             >;
         };
 
